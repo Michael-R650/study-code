@@ -3,7 +3,7 @@ int main()
 {
     int myNumbers[5] = {10, 20, 30, 40, 50};
     int *p1 = (myNumbers + 1);
-    int *p2 = (myNumbers + 4);
+    int *p2 = &myNumbers[4];
     printf("Pointer 1 adress: %p\n", &p1);
     printf("Pointer 2 adress: %p\n", &p2);
     printf("Pointer diffrence: %d\n", (p2 - p1));
