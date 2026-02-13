@@ -20,6 +20,7 @@
             "group": {
                 "kind": "build",
                 "isDefault": false
+                "isDefault": false
             },
             "detail": "Vom Debugger generierte Aufgabe."
         },
@@ -39,6 +40,22 @@
             },
             "problemMatcher": [
                 "$gcc"
+            ]
+        },
+        {
+            "label": "build (c++)",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++20",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "problemMatcher": [
+                "$gcc"
+            ]
             ],
             "group": {
                 "kind": "build",
