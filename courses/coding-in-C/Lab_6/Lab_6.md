@@ -14,7 +14,8 @@ The goal is to:
 
 No plotting is required; the focus is on **data processing and analysis**.
 
-## Requirements
+## Section I 
+### Requirements
 
 ### Data Structures
 
@@ -84,9 +85,12 @@ Start: 30.00 s End: 40.00 s
 - Use loops to iterate over samples
 - Keep track of active intervals using a state variable
 - Start a detection interval when `signal[i]` changes from 0 → 1  
-- End the interval when it changes from 1 → 0
-- Use **arrays of fixed size** (3000 samples)
-- No dynamic memory allocation or user-defined functions are required
+- End the interval when it changes from 1 → 0 (i.e. at the last index where it is still 1)
+- Implement the program logic into fitting function and call them from main
+- No dynamic memory allocation required
 
+## Section II
 
+Create in a separate source file a program to generate two txt-files which exactly correspond with the used `sensor1.txt` and `sensor2.txt` files of section I.
 
+Use the function `fprintf()` to write the generated data into the files.
