@@ -1,7 +1,7 @@
 #include <iostream>
 #include "section1.hpp"
 int main(){
-    return 0;
+    std::cout<<"Start"<<std::endl;
     BankAccount kek;
     kek.deposit(100);
     kek.setOwner("Michi");
@@ -10,5 +10,5 @@ int main(){
     kek.getAccoutInfo();
     kek.withdraw(10);
     kek.getAccoutInfo();
-    
+    std::cout<<"End";
 }

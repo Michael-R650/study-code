@@ -72,3 +72,7 @@ int main()
         std::cout << "That means that you are still a kid or teenager";
     }
 }
+/*
+ * The class BankAccount does not contain a methode
+ * calles setBalance.
+ */
