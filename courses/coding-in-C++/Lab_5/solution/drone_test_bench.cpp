@@ -85,10 +85,16 @@ int main()
     // storing the previous element until the end of the loop iteration
 
     // Section III
-    // Task 9
-    std::cout << "Sum: " << computeSum(recordedData2) << '\n';
-    std::cout << "Max: " << computeMax(recordedData2) << '\n';
-    std::cout << "Average: " << computeAverage(recordedData2) << '\n';
+    // Task 9a
+    std::vector<int> intData = {4, 7, 2, 9};
+    std::vector<double> doubleData = {2.5, 3.0, 4.5, 1.0};
+
+    std::cout << "Integer dataset\n";
+    printMetricsReport(intData);
+    std::cout << '\n';
+
+    std::cout << "Double dataset\n";
+    printMetricsReport(doubleData);
 
     return 0;
 }

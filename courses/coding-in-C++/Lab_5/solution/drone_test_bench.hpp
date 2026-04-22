@@ -139,4 +139,16 @@ double computeAverage(const std::vector<T> &data)
     T sum = computeSum(data);
     return static_cast<double>(sum) / data.size();
 }
+
+template <typename T>
+void printMetricsReport(const std::vector<T> &data)
+{
+    std::cout << "Data: ";
+    printVector(data);
+    std::cout << '\n';
+
+    std::cout << "Sum: " << computeSum(data) << '\n';
+    std::cout << "Max: " << computeMax(data) << '\n';
+    std::cout << "Average: " << computeAverage(data) << '\n';
+}
 #endif
