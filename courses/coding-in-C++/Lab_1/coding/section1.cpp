@@ -5,11 +5,24 @@ namespace validation
 {
     const std::uint16_t ADULT_LIMIT = 18;
     const std::uint16_t SENIOR_LIMIT = 65;
-
+/**
+ * @brief 
+ * 
+ * @param age 
+ * @return true 
+ * @return false 
+ */
     bool isAdult(std::uint8_t age)
     {
         return (age >= ADULT_LIMIT);
     }
+    /**
+     * @brief 
+     * 
+     * @param age 
+     * @return true 
+     * @return false 
+     */
     bool isSenior(std::uint8_t age)
     {
         return (age >= SENIOR_LIMIT);

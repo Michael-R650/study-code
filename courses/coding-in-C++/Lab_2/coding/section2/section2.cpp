@@ -18,6 +18,11 @@ Note::Note(std::string par_text){
 text = new std::string;
 *text = par_text;
 };
+/**
+ * @brief Copie-Construct a new Note:: Note object
+ * 
+ * @param par_note 
+ */
 Note::Note(const Note &par_note){
 text = new std::string;
 *text = *par_note.text;
