@@ -3,27 +3,16 @@
 #include <limits>
 namespace validation
 {
+    const std::uint16_t ADULT_LIMIT = 18;
+    const std::uint16_t SENIOR_LIMIT = 65;
+
     bool isAdult(std::uint8_t age)
     {
-        if (age >= 18)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (age >= ADULT_LIMIT);
     }
     bool isSenior(std::uint8_t age)
     {
-        if (age >= 65)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return (age >= SENIOR_LIMIT);
     }
 }
 
@@ -72,7 +61,3 @@ int main()
         std::cout << "That means that you are still a kid or teenager";
     }
 }
-/*
- * The class BankAccount does not contain a methode
- * calles setBalance.
- */

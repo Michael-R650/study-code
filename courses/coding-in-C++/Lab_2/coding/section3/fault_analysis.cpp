@@ -10,8 +10,8 @@ public: // should be private
     string name;
     double price;
     int stock;
-    string *category; // why pointer? // why no enum calss for a list of categories?
-    int id;           // should be const
+    string *category;
+    int id;           // should be static
                       // methodes can be public
     //  no destroy function avaliable
     Article(string name, double price, int stock, string category, int id)
@@ -42,7 +42,7 @@ public: // should be private
     double applyDiscount(double percent)
     { // no double value necessary, no logic for negative and numbers over 100
         price = price - price * percent / 100;
-        return price; // same here
+        return price; // not usefull, because it should change an objects value
     }
 
     double getPrice()
@@ -52,6 +52,7 @@ public: // should be private
 
     bool isAvailable()
     { // const
+        // if is not necessary return(stock>0);
         if (stock > 0)
             return true;
         else
@@ -59,7 +60,7 @@ public: // should be private
     }
 
     void printInfo()
-    { // const
+    { // const nad endl is not the best, because its not necessary to flush the buffer. it takes lonnget than \n
         cout << "Article: " << name << endl;
         cout << "Category: " << *category << endl;
         cout << "Price: " << price << endl;
