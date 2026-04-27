@@ -4,10 +4,6 @@
 
 int main(){
     Drink beer;
-    beer.setAlcohol(8);
-    beer.setName("beer");
-    beer.setSugar(3);
-    beer.setTemperature(10);
-    beer.print();
+    beer.setAlcohol(8).setName("beer").setSugar(3).setTemperature(10).print();
     return 0;
 }
