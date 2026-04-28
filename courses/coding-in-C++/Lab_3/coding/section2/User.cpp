@@ -8,10 +8,19 @@ void User::printInfo() const
     std::cout << this->name;
     std::cout << this->id;
 }
-
-Student::Student(){
-
+void Student::printRole()
+{
+    std::cout <<"--------------------\n";
+    std::cout << this->name << "\n";
+    std::cout << id << "\n";
+    std::cout << score << "\n";
+    std::cout <<"--------------------\n";
 }
-void Student::printInfo(){
-
+void Instructor::printRole()
+{
+    std::cout <<"--------------------\n";
+    std::cout << this->name << "\n";
+    std::cout << id << "\n";
+    std::cout << happiness << "\n";
+    std::cout <<"--------------------\n";
 }
