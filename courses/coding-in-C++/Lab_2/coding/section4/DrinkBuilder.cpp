@@ -91,12 +91,12 @@ void Drink::print() const
 {
     if (Drink::isValid())
     {
-
-        std::cout << "Drink:" << this->name<<std::endl;
-        std::cout << "Sugar:" << this->sugar<<std::endl;
-        std::cout << "Temperature:" << this->temperature<<std::endl;
-        std::cout << "Alcohol:" << this->alcohol<<std::endl;
-        std::cout << "With milk:" << this->withMilk << std::boolalpha<<std::endl;
+        std::cout << std::boolalpha;
+        std::cout << "Drink: " << this->name<<std::endl;
+        std::cout << "Sugar: " << this->sugar<<std::endl;
+        std::cout << "Temperature: " << this->temperature<<std::endl;
+        std::cout << "Alcohol: " << this->alcohol<<std::endl;
+        std::cout << "With milk: " << this->withMilk <<std::endl;
     }
     else
     {
