@@ -1,0 +1,14 @@
+Task 1
+1. Which classes are modeled? Libary, Book, Member, Librarian, PrintedBook, EBook, Loan
+2. Which attributes and methods are visible from outside the class? every method and all Book attributes plus salary attribute from Librarian
+3. Which inheritance relationships are shown? PrintedBook and EBook inherit from class Book
+4. Which composition, aggregation, or association relationships are shown? All of them
+
+Task 2
+1. Which relationships are modeled correctly? Book to PrintedBook and the inheritance from EBook to Book
+2. Which relationships are questionable or incorrect? Explain why. Ebook association to Book, cause it already inherite from the class. Book to Library. 
+    Book is a part of Library and can live without it and a book can be in more than one Libary. 
+    Loan to EBook is also incorrect, because, they have nothing to do with each other
+    No Loan to Librarian. Librarian inherite from Member, which is not necessary. Librarian is a part of Libary
+3. Is inheritance used appropriately in all cases?
+4. Does the design preserve encapsulation?
