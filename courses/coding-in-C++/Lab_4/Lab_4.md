@@ -110,7 +110,7 @@ You will implement a simple class hierarchy for geometric shapes.
 
 ### 📘 Requirements
 
-#### Part 1 – Base Class
+### Part 1 – Base Class
 
 Create a base class that represents a general geometric shape.
 
@@ -121,29 +121,29 @@ Create a base class that represents a general geometric shape.
 
 ---
 
-#### Part 2 – Derived Classes
+### Part 2 – Derived Classes
 
-Create at least two specific shapes that inherit from your base class.
+Create two specific shapes (Circle and Rectangle) that inherit from your base class.
 
 - Each shape should store the necessary attributes
 - Each shape should provide its own implementation of the area calculation
 - Make sure the function in the derived classes correctly overrides the base class function
 - Test all derived classes in the main function
-- Explain if and why the usage of overrides makes sense in this scenario
+- Explain if and why the usage of ```override``` makes sense in this scenario
 
 
 ---
 
-#### Part 3 – Polymorphism
+### Part 3 – Polymorphism
 
 - Create an array of type `Shape*`
-- Assign it objects of your derived classes
-- Call the `area()` method of each obejct
-- What do you notice with respect to the called method?
+- Assign it 4 objects of your derived classes (two per class)
+- Call the `area()` method of each obejct within a loop and print the result
+- What do you notice with respect to the called method? Discuss.
 
 ---
 
-#### Part 4 – Abstract Class
+### Part 4 – Abstract Class
 
 - Modify `Shape` by making it an abstract class
 - Explain what changes!
