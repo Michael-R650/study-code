@@ -110,6 +110,7 @@ void Mage::displayStatus() const
     std::cout << "Mana:" << magicPoints << "\n";
     std::cout << "Name:" << name << "\n";
     std::cout << "EXP:" << experiencePoints << "\n";
+    std::cout << "Leben: " << getHealthPoints() << "\n";
     if (weapon != nullptr)
     {
 
@@ -133,6 +134,7 @@ void Warrior::displayStatus() const
     std::cout << "wsPoint:" << wsPoint << "\n";
     std::cout << "Name:" << name << "\n";
     std::cout << "EXP:" << experiencePoints << "\n";
+    std::cout << "Leben: " << getHealthPoints() << "\n";
     if (weapon != nullptr)
     {
         std::cout << "Weapon" << weapon->getName() << "\n";

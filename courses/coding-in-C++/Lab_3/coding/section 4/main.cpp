@@ -11,6 +11,10 @@ int main()
     w1.displayStatus();
     m1.displayStatus();
     w1.damageTaken(100);
+    Healer h1;
+    h1.heal(1000,w1);
+    w1.displayStatus();
+
 
     return 0;
 }
