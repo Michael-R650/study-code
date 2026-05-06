@@ -132,6 +132,7 @@ public:
      * @return int
      */
     int getHealthPoints() const;
+    Character&setWeapon(Weapon &weapon);
 };
 
 class Mage : public Character
@@ -195,5 +196,6 @@ public:
      * @param target
      * @return Thief&
      */
+    Thief(std::string name, int level, int exp,int wsPoint);
     Thief &steal(Character &target);
 };

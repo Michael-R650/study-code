@@ -54,6 +54,10 @@ Character::Character(std::string name, int level, int exp) : name(name), level(l
     inventory = new Inventory();
     weapon = nullptr;
 }
+Character &Character::setWeapon(Weapon &weapon){
+this->weapon = &weapon;
+return *this;
+}
 Character &Character::damageTaken(int dmg)
 {
     if ((healthPoints - dmg) > 0)
@@ -116,8 +120,8 @@ void Mage::displayStatus() const
     if (weapon != nullptr)
     {
 
-        std::cout << "Weapon" << weapon->getName() << "\n";
-        std::cout << "Weapon" << weapon->getDmg() << "\n";
+        std::cout << "Weapon: " << weapon->getName() << "\n";
+        std::cout << "Weapondmg: " << weapon->getDmg() << "\n";
     }
     std::cout << "------------------------" << "\n";
 }
@@ -139,8 +143,8 @@ void Warrior::displayStatus() const
     std::cout << "Leben: " << getHealthPoints() << "\n";
     if (weapon != nullptr)
     {
-        std::cout << "Weapon" << weapon->getName() << "\n";
-        std::cout << "Weapon" << weapon->getDmg() << "\n";
+        std::cout << "Weapon: " << weapon->getName() << "\n";
+        std::cout << "Weapondmg: " << weapon->getDmg() << "\n";
     }
     std::cout << "------------------------" << "\n";
 }
@@ -150,7 +154,9 @@ Healer &Healer::heal(int hp, Character &target)
     target.healthPoints += hp;
     return *this;
 }
+Thief::Thief(std::string name, int level, int exp,int wsPoint):Warrior(name, level, exp,wsPoint){
 
+}
 Thief &Thief::steal(Character &target)
 {
     target.getInventory().removeLastItem();

@@ -16,7 +16,11 @@ int main()
     w1.displayStatus();
     w1.getInventory();
     
-
-
+    Weapon weap1("Schwert",10,&w1);
+w1.setWeapon(weap1);
+w1.displayStatus();
+Thief thief1("Tap",4,200,100);
+thief1.steal(w1);
+w1.displayStatus();
     return 0;
 }
