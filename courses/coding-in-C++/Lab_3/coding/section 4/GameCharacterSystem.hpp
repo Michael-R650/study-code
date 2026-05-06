@@ -1,95 +1,198 @@
 #include <iostream>
-#include <vector>
-class Character
-{
-private:
-    std::string name;
-    int health;
-    int level;
-    int exp;
-    static constexpr int MIN_LEVEL = 1;
-    static constexpr int MAX_LEVEL = 10;
-    static constexpr int MAX_HEALTH = 0;
+#include <string>
+constexpr int MAXSLOTS = 10;
 
-public:
-    Character(std::string name, int level = 1) : name(name) {};
-    virtual ~Character();
-    std::string getName() const;
-    int getLevel() const;
-    int getHealth() const;
-    void addExp(int amount);
-    void levelUp();
-    Inventory &getInventory();
-    Weapon *getWeapon() const;
-    void setWeapon(Weapon *weapon);
-    virtual void regenerate() const = 0;
-    virtual void printStatus() const = 0;
+class Weapon;
+class Character;
+class Healer;
 
-protected:
-    void changeHealth(int health);
-    friend class Healer;
-};
 class Inventory
 {
 private:
-    std::vector items;
-    std::size_t maxSlots;
+    unsigned int itemCount;
+    std::string items[MAXSLOTS];
 
 public:
-    Inventory(std::size_t maxSlots = 10);
+    /**
+     * @brief Construct a new Inventory object
+     *
+     */
+    Inventory();
+    /**
+     * @brief
+     *
+     * @return true
+     * @return false
+     */
     bool isEmpty() const;
+    /**
+     * @brief
+     *
+     * @return true
+     * @return false
+     */
     bool isFull() const;
+    /**
+     * @brief
+     *
+     * @param item
+     * @return true
+     * @return false
+     */
     bool addItem(std::string &item);
-    bool removeLastItem(std::string &item);
-    std::size_t getCount() const;
-    std::size_t getMaxSlots() const;
+    /**
+     * @brief
+     *
+     * @return true
+     * @return false
+     */
+    bool removeLastItem();
 };
+
 class Weapon
 {
 private:
     std::string name;
     int damage;
+    Character *owner;
 
 public:
-    Weapon(std::string name, int damage);
+    /**
+     * @brief Construct a new Weapon object
+     *
+     * @param name
+     * @param dmg
+     */
+    Weapon(std::string name, int dmg);
+    /**
+     * @brief Get the Name object
+     *
+     * @return std::string
+     */
     std::string getName() const;
-    int getDamage() const;
+    /**
+     * @brief Get the Dmg object
+     *
+     * @return int
+     */
+    int getDmg() const;
+};
+
+class Character
+{
+    friend class Healer;
+    int healthPoints;
+
+protected:
+    std::string name;
+    int level;
+    int experiencePoints;
+    const int MAXLEVEL = 10;
+    int levelLimit[9];
+    Inventory *inventory;
+    Weapon *weapon;
+
+public:
+    Character(std::string name, int level, int exp);
+    /**
+     * @brief
+     *
+     * @param dmg
+     * @return Character&
+     */
+    Character &damageTaken(int dmg);
+    /**
+     * @brief Get the Inventory object
+     *
+     * @return Inventory
+     */
+    Inventory getInventory() const;
+    /**
+     * @brief Get the Level object
+     *
+     * @return int
+     */
+    int getLevel() const;
+    /**
+     * @brief
+     *
+     */
+    void levelUp();
+    /**
+     * @brief
+     *
+     * @param exp
+     * @return Character&
+     */
+    Character &earnExperience(int exp);
+    /**
+     * @brief Get the Health Points object
+     *
+     * @return int
+     */
+    int getHealthPoints() const;
+};
+
+class Mage : public Character
+{
+private:
+    int magicPoints;
+
+public:
+    Mage(std::string name, int level, int exp, int magicPoints);
+    Mage &regenerateMagic(int magicPoints);
+    void displayStatus() const;
 };
 class Warrior : public Character
 {
-
 private:
-    int weaponSkill;
+    int wsPoint;
 
 public:
-    Warrior(std::string name, int level = 1, int skill = 0);
-    void regenerate();
-    void printStatus() const;
-    int getWeapon() const;
+    /**
+     * @brief Construct a new Warrior object
+     *
+     * @param name
+     * @param level
+     * @param exp
+     * @param wsPoints
+     */
+    Warrior(std::string name, int level, int exp, int wsPoints);
+    /**
+     * @brief
+     *
+     * @param wsPoint
+     * @return Warrior&
+     */
+    Warrior &regenerateWSPoints(int wsPoint);
+    /**
+     * @brief
+     *
+     */
+    void displayStatus() const;
 };
+
+class Healer
+{
+public:
+    /**
+     * @brief
+     *
+     * @param healthPoints
+     * @param target
+     * @return Healer&
+     */
+    Healer &heal(int healthPoints, Character &target);
+};
+
 class Thief : public Warrior
 {
 public:
-    Thief(std::string name, int level = 1, int skill = 0);
-    Thief &steal(Character target);
-    void regenerate();
-    void printStatus() const;
-};
-class Mage
-{
-private:
-    int mana;
-
-public:
-    Mage(std::string name, int level, int skill = 0);
-    void regenerate();
-    void printStatus() const;
-    int getMana() const;
-};
-class Healer : public Mage
-{
-    Healer(std::string name, int level = 1, int mana = 0);
-    Healer &heal(Character target);
-    void regenerate();
-    void printStatus() const;
+    /**
+     * @brief
+     *
+     * @param target
+     * @return Thief&
+     */
+    Thief &steal(Character &target);
 };
