@@ -57,6 +57,7 @@ private:
     Character *owner;
 
 public:
+Weapon(std::string name, int damage, Character *owner);
     /**
      * @brief Construct a new Weapon object
      *

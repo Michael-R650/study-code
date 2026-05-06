@@ -37,7 +37,9 @@ bool Inventory::removeLastItem()
         return false;
     }
 }
+Weapon::Weapon(std::string name, int damage, Character *owner): name(name), damage(damage),owner(owner){
 
+}
 std::string Weapon::getName() const
 {
     return name;

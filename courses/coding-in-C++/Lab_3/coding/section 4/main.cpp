@@ -14,6 +14,8 @@ int main()
     Healer h1;
     h1.heal(1000,w1);
     w1.displayStatus();
+    w1.getInventory();
+    
 
 
     return 0;
