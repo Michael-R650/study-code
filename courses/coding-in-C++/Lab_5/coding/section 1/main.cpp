@@ -21,15 +21,16 @@ int main()
     std::cout << i1 << " " << j1 << "\n";
     swap(i1, j1);
     std::cout << i1 << " " << j1 << "\n";
-    return 0;
+    
 
     //section 2
     int arrayOne[]={1,2,3,4,5,6,7,8,9,0};
     double arrayTwo[]={1.2,2.2,3.3,4.4,5.5};
     char arrayThree[]={'a','b','c','d','e','f','g'};
-    printSensorFrame(arrayOne,sizeof(arrayOne));
-    printSensorFrame(arrayTwo,sizeof(arrayTwo));
-    printSensorFrame(arrayThree,sizeof(arrayThree));
-
-
+    printSensorFrame(arrayOne,sizeof(arrayOne)/sizeof(int));
+    printSensorFrame(arrayTwo,sizeof(arrayTwo)/sizeof(double));
+    printSensorFrame(arrayThree,sizeof(arrayThree)/sizeof(char));
+std::cout<<smallestValue(arrayOne,sizeof(arrayOne)/sizeof(int))<<"\n";
+std::cout<<smallestValue(arrayTwo,sizeof(arrayTwo)/sizeof(double))<<"\n";
+return 0;
 };
