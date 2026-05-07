@@ -15,20 +15,35 @@ void swap(T &a, T &b)
     a = b;
     b = u;
 }
+/**
+ * @brief prints out the array
+ *
+ * @tparam S
+ * @param a
+ * @param size
+ */
 template <typename S>
 void printSensorFrame(S a[], int size)
 {
     std::cout << "[";
     for (int i = 0; i < size; i++)
     {
-        std::cout << a[i] << (i< size-1 ? ", ": "");
+        std::cout << a[i] << (i < size - 1 ? ", " : "");
     }
     std::cout << "]\n";
 }
 
 template <typename S>
-S smallestValue(S a[], int size);
 
+S smallestValue(S a[], int size);
+/**
+ * @brief  returns the smallest value from the array if it is an int
+ *
+ * @tparam S
+ * @param a
+ * @param size
+ * @return S
+ */
 template <>
 int smallestValue<int>(int a[], int size)
 {
@@ -42,7 +57,14 @@ int smallestValue<int>(int a[], int size)
     }
     return temp;
 }
-
+/**
+ * @brief returns the smallest value from the array if it is a double
+ *
+ * @tparam
+ * @param a
+ * @param size
+ * @return int
+ */
 template <>
 double smallestValue<double>(double a[], int size)
 {
@@ -56,7 +78,16 @@ double smallestValue<double>(double a[], int size)
     }
     return temp;
 }
-
+/**
+ * @brief prints out the labeled version
+ *
+ * @tparam T
+ * @tparam S
+ * @param label1
+ * @param value1
+ * @param label2
+ * @param value2
+ */
 template <typename T, typename S>
 void printLabeled(std::string label1, T value1, std::string label2, S value2)
 {

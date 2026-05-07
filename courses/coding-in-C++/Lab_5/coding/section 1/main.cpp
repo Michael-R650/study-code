@@ -27,10 +27,14 @@ int main()
     int arrayOne[]={1,2,3,4,5,6,7,8,9,0};
     double arrayTwo[]={1.2,2.2,3.3,4.4,5.5};
     char arrayThree[]={'a','b','c','d','e','f','g'};
+    
     printSensorFrame(arrayOne,sizeof(arrayOne)/sizeof(int));
     printSensorFrame(arrayTwo,sizeof(arrayTwo)/sizeof(double));
     printSensorFrame(arrayThree,sizeof(arrayThree)/sizeof(char));
+    //Section 3
 std::cout<<smallestValue(arrayOne,sizeof(arrayOne)/sizeof(int))<<"\n";
 std::cout<<smallestValue(arrayTwo,sizeof(arrayTwo)/sizeof(double))<<"\n";
+//section 4
+printLabeled("Label1",10,"Label 2",4.6);
 return 0;
 };
