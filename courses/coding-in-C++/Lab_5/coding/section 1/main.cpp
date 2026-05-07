@@ -1,7 +1,9 @@
 #include <iostream>
 #include "emergencyPayloadSwitch.hpp"
+// temps are better because i dont have to wrtie the code for each datatype again
 int main()
 {
+    //section 1
     int i = 10;
     int j = 9;
     std::string val1 = "Hi";
@@ -20,4 +22,14 @@ int main()
     swap(i1, j1);
     std::cout << i1 << " " << j1 << "\n";
     return 0;
+
+    //section 2
+    int arrayOne[]={1,2,3,4,5,6,7,8,9,0};
+    double arrayTwo[]={1.2,2.2,3.3,4.4,5.5};
+    char arrayThree[]={'a','b','c','d','e','f','g'};
+    printSensorFrame(arrayOne,sizeof(arrayOne));
+    printSensorFrame(arrayTwo,sizeof(arrayTwo));
+    printSensorFrame(arrayThree,sizeof(arrayThree));
+
+
 };
