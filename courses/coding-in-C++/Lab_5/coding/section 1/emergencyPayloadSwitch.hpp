@@ -21,7 +21,7 @@ void printSensorFrame(S a[], int size)
     std::cout << "[";
     for (int i = 0; i < size; i++)
     {
-        std::cout << a[i] << (i< size-1 ? ", ", "");
+        std::cout << a[i] << (i< size-1 ? ", ": "");
     }
     std::cout << "]\n";
 }
