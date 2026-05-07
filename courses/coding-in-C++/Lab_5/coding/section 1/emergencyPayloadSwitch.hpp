@@ -1,6 +1,7 @@
 #ifndef PAYLOAD
 #define PAYLOAD
 #include <string>
+#include <iostream>
 template <typename T>
 /**
  * @brief sawp a and b
@@ -13,14 +14,14 @@ void swap(T &a, T &b)
     T u = a;
     a = b;
     b = u;
-};
+}
 template <typename S>
 void printSensorFrame(S a[], int size)
 {
     std::cout << "[";
     for (int i = 0; i < size; i++)
     {
-        std::cout << a[i] << ", ";
+        std::cout << a[i] << (i< size-1 ? ", ", "");
     }
     std::cout << "]\n";
 }
