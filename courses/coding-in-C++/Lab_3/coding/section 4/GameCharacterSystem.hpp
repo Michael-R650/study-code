@@ -39,7 +39,7 @@ public:
      * @return true
      * @return false
      */
-    bool addItem(std::string &item);
+    bool addItem(const std::string &item);
     /**
      * @brief
      *

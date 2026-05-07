@@ -12,7 +12,7 @@ bool Inventory::isFull() const
 {
     return itemCount >= MAXSLOTS;
 }
-bool Inventory::addItem(std::string &newItem)
+bool Inventory::addItem(const std::string &newItem)
 {
     if (isFull())
     {

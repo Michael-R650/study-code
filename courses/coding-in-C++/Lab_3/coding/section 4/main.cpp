@@ -22,5 +22,7 @@ w1.displayStatus();
 Thief thief1("Tap",4,200,100);
 thief1.steal(w1);
 w1.displayStatus();
+m1.getInventory().addItem("shield");
+m1.displayStatus();
     return 0;
 }
