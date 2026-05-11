@@ -26,12 +26,12 @@ private:
     std::string artist;
 
 public:
-    MP3File(const std::string& artist_name)
+    MP3File(const std::string &artist_name)
         : artist(artist_name)
     {
     }
 
-    void play() const override 
+    void play() const override
     {
         std::cout << "Playing MP3 by " << artist << "\n";
     }
@@ -68,7 +68,7 @@ public:
 
 int main()
 {
-    AudioFile* playlist[2];
+    AudioFile *playlist[2];
 
     playlist[0] = new MP3File("Daft Punk");
     playlist[1] = new WAVFile();
