@@ -22,8 +22,8 @@ void swap(T &a, T &b)
  * @param a
  * @param size
  */
-template <typename S>
-void printSensorFrame(S a[], int size)
+template <typename S,int size>
+void printSensorFrame(S (&a)[size])
 {
     std::cout << "[";
     for (int i = 0; i < size; i++)

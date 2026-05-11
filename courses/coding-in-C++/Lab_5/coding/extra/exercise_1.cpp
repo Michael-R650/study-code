@@ -10,25 +10,12 @@ public:
     Pair() {
 
     };
-    Pair(T value1, Z value2) : value1(value1), value2(value2)
-    {
-    }
-    T getvalue1()
-    {
-        return value1;
-    }
-    Z getValue2()
-    {
-        return value2;
-    }
-    void setvalue1(T value)
-    {
-        this->value1 = value;
-    }
-    void setvalue2(Z value)
-    {
-        this->value2 = value;
-    }
+    Pair(T value1, Z value2) : value1(value1), value2(value2) {}
+    T getvalue1() { return value1; }
+    Z getValue2() { return value2; }
+    void setvalue1(T value) { this->value1 = value; }
+    void setvalue2(Z value) { this->value2 = value; }
+    
     void printValue()
     {
         std::cout << "Value1: " << value1 << "\n";
