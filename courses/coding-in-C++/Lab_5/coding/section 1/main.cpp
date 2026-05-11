@@ -64,6 +64,8 @@ int main()
     {
         std::cout << "Object not found";
     }
+
+    // task 7
     std::vector<int> vec2 = {7, -1, 13, -1, 21, 21, 8, -1, 8};
     std::cout << '[';
     for (int x : vec2)
@@ -92,6 +94,14 @@ int main()
     for (int x : vec2)
     {
         std::cout << x << ' ';
+    }
+    std::cout << ']';
+    // task 8
+    std::vector<int>::iterator it3;
+    std::cout << '[';
+    for (std::vector<int>::iterator it3 = vec2.begin(); it3 != vec2.end(); ++it3)
+    {
+        std::cout << *it3 << ' ';
     }
     std::cout << ']';
     return 0;
