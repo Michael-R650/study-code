@@ -104,5 +104,10 @@ int main()
         std::cout << *it3 << ' ';
     }
     std::cout << ']';
+
+    //task 9
+
+    std::vector<int> vec{0,5,3,2,9};
+analyze(vec);
     return 0;
 };

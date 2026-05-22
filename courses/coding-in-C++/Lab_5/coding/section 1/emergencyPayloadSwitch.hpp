@@ -2,6 +2,9 @@
 #define PAYLOAD
 #include <string>
 #include <iostream>
+#include <vector>
+#include <numeric> 
+#include <cstddef>
 template <typename T>
 /**
  * @brief sawp a and b
@@ -93,5 +96,10 @@ void printLabeled(std::string label1, T value1, std::string label2, S value2)
 {
     std::cout << label1 << ": " << value1 << " | " << label2 << ": " << value2 << "\n";
 }
-
+template<typename T>
+void analyze(const std::vector<T> &vec){
+    std::cout<<"Smallest"<<*std::max_element(vec.begin(),vec.end())<<std::endl;
+    // std::cout<<"Biggest"<<computeMax(vec)<<std::endl;
+    // std::cout<<"Sum"<<computeSum(vec)<<std::endl;
+}
 #endif
