@@ -107,7 +107,22 @@ int main()
 
     //task 9
 
-    std::vector<int> vec{0,5,3,2,9};
-analyze(vec);
+    std::vector<int> vec3{0,5,3,2,9};
+analyze(vec3);
+std::vector par = fixedSize(arrayOne,5);
+analyze(par);
+
+std::vector<bool> vec4{1,1,0,0,1,1,0};
+if(analyze(vec4)){
+    std::cout<<"True";
+}else{
+    std::cout<<"False";
+};
+std::vector<bool> vec5{true,true,false,false,true};
+if(analyze(vec5)){
+    std::cout<<"True";
+}else{
+    std::cout<<"False";
+};
     return 0;
 };
