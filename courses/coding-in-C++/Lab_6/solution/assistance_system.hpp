@@ -62,7 +62,7 @@ public:
 class AdaptiveCruiseControl
 {
 private:
-    static constexpr double SPEED_STEP_KMH = 5.0; //MUSS DAS STATIC SEIN?
+    static constexpr double SPEED_STEP_KMH = 5.0;
 
     double target_speed_kmh;
     double minimum_distance_m;
