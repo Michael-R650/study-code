@@ -26,8 +26,8 @@
             ],
             "compilerPath": "C:/msys64/ucrt64/bin/g++.exe",
             "intelliSenseMode": "windows-gcc-x64",
-            "cppStandard": "c++20",
-            "cStandard": "c17"
+            "cppStandard": "c++26",
+            "cStandard": "c23"
         },
         {
             "name": "Linux",
@@ -75,7 +75,7 @@
             "compilerPath": "/usr/bin/clang++",
             "intelliSenseMode": "macos-clang-x64",
             "cppStandard": "c++20",
-            "cStandard": "c17"
+            "cStandard": "c23"
         }
     ]
 }
