@@ -12,7 +12,7 @@ int main()
     auto rear_sensor = std::make_shared<DistanceSensor>("rear", 1.2);
     auto left_sensor = std::make_shared<DistanceSensor>("left", 0.8);
     auto right_sensor = std::make_shared<DistanceSensor>("right", 3.0);
-
+//SMART POINTER
     EmergencyBrakeSystem emergency_brake(10.0);
     LaneKeepingAssist lane_assist(0.4, 5.0);
     AdaptiveCruiseControl cruise_control(80.0, 15.0);
