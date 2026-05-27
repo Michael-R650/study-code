@@ -1,17 +1,28 @@
-#include "vehicle.hpp"
+#include "bugHunt_vehicle.hpp"
 
-Vehicle::Vehicle(const std::string &vehicle_model)
+Vehicle::Vehicle(const std::string &vehicle_model, double amount_km)
     : model(vehicle_model),
-      speed_kmh(0.0),
+      speed_kmh(MIN_SPEED),
       steering_angle(0.0),
       lane_offset_m(0.0),
       brake_light_on(false)
 {
+    set_speed_kmh(amount_km);
 }
-
+void Vehicle::set_speed_kmh(double amount_kmh)
+{
+    if (amount_kmh <= MIN_SPEED)
+    {
+        speed_kmh = MIN_SPEED;
+    }
+    else
+    {
+        speed_kmh = amount_kmh;
+    }
+}
 void Vehicle::accelerate(double amount_kmh)
 {
-    if (amount_kmh <= 0.0)
+    if (amount_kmh <= MIN_SPEED)
     {
         return;
     }
@@ -28,7 +39,7 @@ void Vehicle::accelerate(double amount_kmh)
 
 void Vehicle::brake(double amount_kmh)
 {
-    if (amount_kmh <= 0.0)
+    if (amount_kmh <= MIN_SPEED)
     {
         return;
     }
@@ -36,15 +47,26 @@ void Vehicle::brake(double amount_kmh)
     speed_kmh -= amount_kmh;
     brake_light_on = true;
 
-    if (speed_kmh < 0.0)
+    if (speed_kmh < MIN_SPEED)
     {
-        speed_kmh = 0.0;
+        speed_kmh = MIN_SPEED;
     }
 }
 
 void Vehicle::steer(double angle)
 {
-    steering_angle = angle;
+    if (angle > MAX_STEERING_ANGLE)
+    {
+        steering_angle = MAX_STEERING_ANGLE;
+    }
+    else if (angle < -MAX_STEERING_ANGLE)
+    {
+    steering_angle = -MAX_STEERING_ANGLE;
+    }
+    else
+    {
+        steering_angle = angle;
+    }
 }
 
 void Vehicle::update_lane_offset(double offset)
