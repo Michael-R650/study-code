@@ -17,7 +17,14 @@ public:
         std::cout << "Logger: " << value << " C\n";
     }
 };
-
+class Alarm
+{
+public:
+    void callCloudPublisher(double value)
+    {
+        std::cout << "Publishing " << value << " C to cloud\n";
+    };
+};
 class TemperatureSensor
 {
 private:
@@ -25,6 +32,7 @@ private:
 
     Display display;
     Logger logger;
+    Alarm alarm;
 
 public:
     void set_temperature(float value)
@@ -34,6 +42,10 @@ public:
         // directly coupled to other classes
         display.show_temperature(temperature);
         logger.log_temperature(temperature);
+        if (temperature > 30)
+        {
+            alarm.callCloudPublisher(temperature);
+        }
     }
 };
 
@@ -42,6 +54,7 @@ int main()
     TemperatureSensor sensor;
 
     sensor.set_temperature(23.5f);
+    sensor.set_temperature(30.5f);
 
     return 0;
 }

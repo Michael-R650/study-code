@@ -39,6 +39,7 @@ InjuredPlayer::InjuredPlayer(const std::string &name, int age)
 
 void InjuredPlayer::train(int intensity)
 {
+    // Loskov Subsitution Principle
     if (intensity > 30)
     {
         std::cout << "ERROR: Injured players only accept intensity values up to 30.\n";
@@ -89,6 +90,7 @@ void FootballManager::notify_player(const Player &player, const std::string &mes
 
 void FootballManager::select_strategy(const std::string &strategy)
 {
+    //Open/Closed Principle
     if (strategy == "offensive")
     {
         std::cout << "Strategy: offensive pressing.\n";
