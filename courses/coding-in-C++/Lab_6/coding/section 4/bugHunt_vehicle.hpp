@@ -15,8 +15,11 @@ private:
     bool brake_light_on;
 
 public:
-    Vehicle(const std::string &vehicle_model);
-
+    static constexpr double MAX_SPEED_KMH = 180;
+    static constexpr double MIN_SPEED = 0.0;
+    static constexpr double MAX_STEERING_ANGLE = 45;
+    Vehicle(const std::string &vehicle_model,double aount_kmh);
+    void set_speed_kmh(double amount_kmh);
     void accelerate(double amount_kmh);
     void brake(double amount_kmh);
     void steer(double angle);
@@ -25,8 +28,7 @@ public:
     double get_speed() const;
     double get_steering_angle() const;
     double get_lane_offset() const;
-
-    std::string &get_model();
+    const std::string &get_model() const;
 
     bool is_brake_light_on() const;
 
