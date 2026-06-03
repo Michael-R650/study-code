@@ -26,7 +26,7 @@ public:
 
     void train(int intensity) override;
 };
-
+//Interface Segregation Principle
 class ClubService
 {
 public:
@@ -52,12 +52,15 @@ public:
 class FootballManager : public ClubService
 {
 private:
+// Allgemeine Coding Convention
     void select_strategy(const std::string &strategy);
-
+    
+//Dependency Inversion Principle
     FilePlayerRepository repository;
     EmailNotifier notifier;
 
 public:
+// Single Responsibility Principle
     FootballManager() = default;
 
     void prepare_player(Player &player, const std::string &strategy);
