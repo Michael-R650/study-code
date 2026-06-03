@@ -22,6 +22,7 @@ T calculate_average(const std::vector<T> &values)
 template <typename T>
 T find_largest_value(const std::vector<T> &values)
 {
+    
     return std::max(values.begin(), values.end());
 }
 
