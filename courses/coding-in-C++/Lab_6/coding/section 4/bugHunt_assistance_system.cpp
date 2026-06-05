@@ -64,10 +64,9 @@ EmergencyBrakeSystem::EmergencyBrakeSystem(double critical_distance)
 {
 }
 
-void EmergencyBrakeSystem::evaluate(Vehicle &vehicle,
-                                    const DistanceSensor &front_sensor) const
+void EmergencyBrakeSystem::evaluate(Vehicle &vehicle) override
 {
-    if (!front_sensor.is_active())
+    if (!is_active())
     {
         return;
     }
@@ -88,7 +87,7 @@ LaneKeepingAssist::LaneKeepingAssist(double max_offset,
 double  LaneKeepingAssist::get_lane_offset(){
 return lane_offset;
 };
-void LaneKeepingAssist::evaluate(Vehicle &vehicle) const
+void LaneKeepingAssist::evaluate(Vehicle &vehicle)
 {
     double offset = vehicle.get_lane_offset();
 
@@ -115,10 +114,9 @@ AdaptiveCruiseControl::AdaptiveCruiseControl(double target_speed,
 {
 }
 
-void AdaptiveCruiseControl::evaluate(Vehicle &vehicle,
-                                    const DistanceSensor &front_sensor) const
+void AdaptiveCruiseControl::evaluate(Vehicle &vehicle)
 {
-    if (!front_sensor.is_active())
+    if (!p1->is_active())
     {
         return;
     }

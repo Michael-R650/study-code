@@ -13,9 +13,12 @@ int main()
     auto p3 = std::make_shared<DistanceSensor>("left", 0.8);
     auto p4 = std::make_shared<DistanceSensor>("right", 3.0);
 
-    EmergencyBrakeSystem emergency_brake(10.0);
-    LaneKeepingAssist lane_assist(0.4, 5.0);
-    AdaptiveCruiseControl cruise_control(80.0, 15.0);
+    
+    std::vector<std::unique_ptr<AssistanceFeature>> safe;
+    auto emergency_brake = std::make_unique<EmergencyBrakeSystem>(10.0);
+    auto lane_assist = std::make_unique<LaneKeepingAssist>(0.4, 5.0);
+    auto cruise_control = std::make_unique<AdaptiveCruiseControl>(80.0,15.0);
+   
     ParkingAssistant parking_assistant(1.5);
 
     parking_assistant.add_sensor(p1);
@@ -32,17 +35,17 @@ int main()
 
     std::cout << "--- Adaptive cruise control test ---\n";
     p1->set_distance(12.0);
-    cruise_control.evaluate(ego_vehicle, *p1);
+    cruise_control->evaluate(ego_vehicle, *p1);
     ego_vehicle.print_status();
 
     std::cout << "--- Emergency brake system test ---\n";
     p1->set_distance(25.0);
-    emergency_brake.evaluate(ego_vehicle, *p1);
+    emergency_brake->evaluate(ego_vehicle, *p1);
     ego_vehicle.print_status();
 
     std::cout << "--- Lane keeping assist test ---\n";
     ego_vehicle.update_lane_offset(0.7);
-    lane_assist.evaluate(ego_vehicle);
+    lane_assist->evaluate(ego_vehicle);
     ego_vehicle.print_status();
 
     std::cout << "--- Parking assistant test ---\n";
